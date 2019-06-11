@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+	
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" type="text/css">
+	 <div class="container">
+		<div class="proverb">
+			<p><i>"Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything."</i></p>
+		</div>
+		<div class="by">
+			<p>-Plato</p>
+		</div>
+		<div class="world">
+			<a href="{% url 'camera'%}"><button type="button" class="button">Camera</button></a>
+			<p><b>Be the part of Music World</b></p>
+		</div>
+	</div>
+	<div class="middle">
+		<p>With Soor you can</p> 
+		<div id="main">
+			<div class ="first">
+			
+				<div class="pic">
+					<p>Listen to music according to your mood</p>
+				</div>
+				<img src="{% static 'images/mood.jpg'%}" alt="2" width="250" height="250">
+			</div>
+			<div class="second">
+			
+				<div class="pic">
+					<p>Create your own Playlist</p>
+				</div>
+				<img src="{% static 'images/playlist.jpg'%}" alt="2" width="250" height="250">
+			</div>
+			<div class="third">
+			
+				<div class="pic">
+					<p>Share your thoughts and Creations</p>
+				</div>
+				<img src="{% static 'images/share.jpg' %}" alt="2" width="250" height="250">
+			</div>
+		</div>
+	
+	
+	
+		<div class="footer">
+		<div class="Copyright">
+			<p>&copy; Copyright 2019</p>
+		</div>
+		<div class="Icons">
+			<a href="#"><img src="{% static 'images/f.png'%}" style="float:left;color: #88c542;height:30px; width:30px;margin:0 20px;"></a>
+			<a href="#"><img src="{% static 'images/i.jpg'%}" style="float:left;color: #88c542;height:30px; width:30px;margin:0 20px;"></a>
+			<a href="#"><img src="{% static 'images/t.png'%}" style="float:left;height:30px;
+		background-color: #fff; width:30px;margin:0 20px;"></a>
+		</div>
+		</div>
+	</div>
+
+{% endblock %}
+	

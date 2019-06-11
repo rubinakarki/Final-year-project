@@ -1,0 +1,29 @@
+body{
+    background-image: url('g.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+#video{
+    display: block;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#canvas{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#snap{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgb(4, 47, 48); 
+    width: 20%;  
+}

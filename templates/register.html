@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    </head>
+<body>
+    <a href="{% url 'register' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    <form method="POST" class="register">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit">
+    </form>
+    If you already have an account , <a href="{% url 'login'%}"><button>Login</button></a> instead 
+</body>
+</html>

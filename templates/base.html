@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Soor</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=cursive" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+<div class="header" >
+    <div class="bg_header">
+        <nav class="nav">
+        <ul>
+            <a href="{% url 'home'%}"><img src="{% static 'images/1.png'%}" style="float:left;background-color:black;height:69px; width:65px;"></a>
+            <li><a href="{% url 'login'%}" class="right"><b>Log in</b></a></li>
+            <li><a href="{% url 'register' %}" class="right"><b>Register</b></a></li>
+            <li><a href="#" class="right">Chat</a></li>
+            <li><a href="#main" class="right">About</a></li>
+            <li><a href="#" class="right">Playlist</a></li>
+            <li><a href="{% url 'home'%}" class="right">Home</a></li>
+        </ul>
+        </nav>>
+    </div>
+    <div>
+        {% block content %}
+         {% endblock %}
+    </div>
+    
+</body>
+</html>
