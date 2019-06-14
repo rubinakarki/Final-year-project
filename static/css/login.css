@@ -1,0 +1,26 @@
+.container{
+    margin-left: 6%;
+    margin-top: 10%;    
+}
+input[name ='button']{
+    width: 30% ; 
+}
+
+h1{
+    margin-bottom: 10vh;
+    margin-top: -20px;
+}
+
+a  button{
+    width: 30%;
+}
+input[name="username"] 
+{
+    background-color: rgb(207, 194, 194);
+    width: 60%;
+ }
+ input[name="password"]
+ {
+     background-color: rgb(207, 194, 194);
+     width: 60%;
+ }

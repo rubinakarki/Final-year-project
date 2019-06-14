@@ -23,21 +23,26 @@
                 video.play();
             });
         }
+
+
                 // Trigger photo take
-        document.getElementById("snap").addEventListener("click", function() {
-            context.drawImage(video, 0, 0, 640, 480);
-            const img = canvas.toDataURL('image/png')
+                $(document).on("click", "#snap", function(event) {
+                    event.preventDefault();
 
-            apiCall(img)
-        });
+                    context.drawImage(video, 0, 0, 640, 480);
+        //   const img = canvas.toDataURL('image/png')  
 
-        const apiCall = function(img) {
-            $.ajax({
-                data: img,
-                url: '',
-                
-            })
-        }  
+                    const img = canvas.toDataURL('image/png');
+
+                    $.ajax({
+                        type: "POST",
+                        url: "http://localhost:8081/predict/",
+                        data: {images: img},
+                        success: function(data) {
+                            console.log(data)
+                        }
+                    })
+                });
     </script>
 
 {% endblock %}
