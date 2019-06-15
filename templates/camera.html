@@ -6,6 +6,7 @@
 
     <video id="video" width="640" height="480" autoplay></video>
     <button id="snap" class="btn btn-dark">Snap Photo</button>
+    <button class="btn btn-dark" id="upload"> Upload Images  : <input type="file" ></button>
     <canvas id="canvas" width="640" height="480"></canvas>
     <script type="text/javascript">
                 // Elements for taking the snapshot
@@ -45,10 +46,28 @@
                     })
                 });
                
-            //    $(document).on("click","#recommend", function(event){
-            //    event.preventDefault();
+        const input = document.querySelector('input[type ="file"]');
+        input.addEventListener('change',function(e){
+            console.log(input.files);
+            const reader = new FileReader()
+            reader.onload = function(){
+                const img = reader.result;
+                $.ajax({
+                        type: "POST",
+                        url: "http://localhost:8081/predict/",
+                        data: {images: img},
+                        success:function(data_response){
+                            window.location = 'http://127.0.0.1:8081/recommend/' + data_response;
+                                        }
+
+                    })
                 
-            //    }
+                // document.body.appendChild(img)
+            }   
+            reader.readAsDataURL(input.files[0])
+
+        },false)
+
 
     </script>
  

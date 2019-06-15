@@ -51,6 +51,13 @@ def predict(request):
     label = ['angry','disgust','fear','happy','neutral','sad','surprise']    
     return HttpResponse(label[result[0]])  
     
+@csrf_exempt
+def predict_from_upload(request):
+    img_data = request.POST.get('images')
+    result = recognize(img_data)
+    label = ['angry','disgust','fear','happy','neutral','sad','surprise']    
+    return HttpResponse(label[result[0]]) 
+
 
 def recommend(request,emotion):
     if emotion =='angry':

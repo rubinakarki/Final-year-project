@@ -25,16 +25,16 @@
             <a href="{% url 'home'%}"><img src="{% static 'images/1.png'%}" style="float:left;background-color:black;height:69px; width:65px;"></a>
             
             {% if user.is_authenticated %}
-                <li><a href="{% url 'logout'%}" class="right"><b>Logout</b></a></li>
+                <li><a href="{% url 'logout'%}" class="fa fa-sign-out"><b>Logout</b></a></li>
             {% else %}
-            <li><a href="{% url 'login'%}" class="right"><b>Login</b></a></li>
-            <li><a href="{% url 'register' %}" class="right"><b>Register</b></a></li>
+            <li><a href="{% url 'login'%}" class="fa fa-sign-in"><b>Login</b></a></li>
+            <li><a href="{% url 'register' %}" class="fa fa-registered"><b>Register</b></a></li>
             {% endif %}
-            <li><a href="#main" class="right">About</a></li>
-            <li><a href="{% url 'camera' %}" class="right">Camera</a></li>
-            <li><a href="{% url 'chatroom' %}" class="right">Chat</a></li>
-            <li><a href="{% url 'playlist' %}" class="right">Playlist</a></li>
-            <li><a href="{% url 'home'%}" class="right">Home</a></li>
+            <li><a href="#main" class="fa fa-info-circle"><b> About</b> </a></li>
+            <li><a href="{% url 'camera' %}" class="fa fa-camera"><b> Camera</b> </a></li>
+            <li><a href="{% url 'chatroom' %}" class="fa fa-comment-o"><b> Chat</b> </a></li>
+            <li><a href="{% url 'playlist' %}" class="fa fa-play"><b> Playlist</b></a></li>
+            <li><a href="{% url 'home'%}" class="fa fa-home"><b> Home</b> </a></li>
         </ul>
         </nav>>
     </div>

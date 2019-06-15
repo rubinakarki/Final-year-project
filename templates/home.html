@@ -4,16 +4,19 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}" type="text/css">
 	 <div class="container">
-		<div class="proverb">
-			<p><i>"Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything."</i></p>
-		</div>
-		<div class="by">
-			<p>-Plato</p>
-		</div>
-		<div class="world">
-			<a href="{% url 'camera'%}"><button type="button" class="button">Camera</button></a>
-			<p><b>Be the part of Music World</b></p>
-		</div>
+		 <div class="main">
+				<div class="proverb">
+						<p><i>"“Music is the shorthand of emotion” "</i></p>
+					</div>
+					<div class="by">
+						<p>-Leo Tolstoy</p>
+					</div>
+					<div class="world">
+						<a href="{% url 'camera'%}"><button type="button" class="button"><b class="fa fa-camera"> Camera</b></button></a>
+						<p><b>Be the part of Music World</b></p>
+					</div>
+		 </div>
+		
 	</div>
 	<div class="middle">
 		<p>With Soor you can</p> 

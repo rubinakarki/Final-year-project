@@ -11,4 +11,5 @@ urlpatterns = [
     path('login/',views.login_request,name ='login'),
     path('predict/',views.predict,name ='predict'),
     path('recommend/<emotion>',views.recommend,name= 'recommend'),
+    path('predicts/',views.predict_from_upload,name = 'predicts'),
 ]
