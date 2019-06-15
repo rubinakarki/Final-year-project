@@ -1,0 +1,37 @@
+.container{
+    margin-top: 5%;  
+    margin-left: 1px;
+}
+h1 {
+    background-color: #778899;
+    width: 25%; 
+    margin-left : 38%; 
+    border-radius: 25px;
+}
+h2{
+    background-color: #778899;
+    width: 25%; 
+    margin-left : 38%; 
+    border-radius: 25px
+
+}
+p{
+    color: maroon;  
+}
+#main{
+    border-radius: 25px;    
+    width: 100%;
+    margin-left:7%;
+    padding: 0px; 
+}
+
+table{
+    margin-left: 28%;
+}
+td {
+    padding: 10px ;
+}
+
+a{
+    color: maroon;
+}

@@ -14,12 +14,22 @@ from django.core.files.storage import default_storage
 from datetime import time
 import numpy as np
 from model.recognize import recognize
+from home.models import Songs
+from django.conf import settings
 # Create your views here.
 
 def home(request):
     return render(request,'home.html')
 
-@login_required(login_url='/login')
+def playlist(request):
+    list_of_songs  =  Songs.objects.all().order_by('name')
+    return render(request,'playlist.html',{'list': list_of_songs}) 
+    
+@login_required(login_url= settings.LOGIN_URL)
+def chatroom(request):
+   return render(request,'chatroom.html')
+
+@login_required(login_url= settings.LOGIN_URL)
 def camera(request):
     return render(request,'camera.html')
 
@@ -38,9 +48,28 @@ def predict(request):
     file_name = default_storage.save("pictures/output.png", data)
 
     result = recognize(file_name)
+    label = ['angry','disgust','fear','happy','neutral','sad','surprise']    
+    return HttpResponse(label[result[0]])  
+    
 
-    return HttpResponse(result)   
-   
+def recommend(request,emotion):
+    if emotion =='angry':
+        songs =  Songs.objects.filter(angry__gt = 0.5).order_by('name')
+    elif emotion =='disgust':
+        songs =  Songs.objects.filter(disgust__gt = 0.5 ).order_by('name')
+    elif emotion =='fear':
+        songs  =  Songs.objects.filter(fear__gt = 0.5).order_by('name')
+    elif emotion=='happy':
+        songs  =  Songs.objects.filter(happy__gt = 0.5).order_by('name')
+    elif emotion =='neutral':
+        songs =  Songs.objects.filter(neutral__gt = 0.5).order_by('name')
+    elif emotion =='sad':
+        songs =  Songs.objects.filter(sad__gt = 0.5).order_by('name')
+    elif emotion =='surprise':
+        songs  =  Songs.objects.filter(surprise__gt = 0.5).order_by('name')
+    # import ipdb; ipdb.set_trace()
+    return render(request,'recommendsong.html',{'emotion' : emotion,'songs' : songs})
+    
 def register(request):
     if(request.method == 'POST'):
         form = UserCreationForm(request.POST)
@@ -55,7 +84,7 @@ def register(request):
             for msg in form.error_messages:
                 print(form.error_messages[msg])
 
-    form = UserCreationForm
+    form = UserCreationForm()
     return render(request,'register.html',{'form':form})
 
 def logout_request(request):

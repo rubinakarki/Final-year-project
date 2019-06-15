@@ -8,4 +8,4 @@ def recognize(image_name):
     image = load_img(image_name,target_size =(48,48))
     image = np.expand_dims(image,axis =0)
 
-    return loaded_model.predict_classes(image),loaded_model.predict(image), image
+    return loaded_model.predict_classes(image)

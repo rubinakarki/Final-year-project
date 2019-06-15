@@ -30,7 +30,7 @@
                     event.preventDefault();
 
                     context.drawImage(video, 0, 0, 640, 480);
-        //   const img = canvas.toDataURL('image/png')  
+        //   const img = canvas.toDataURL('i``mage/png')  
 
                     const img = canvas.toDataURL('image/png');
 
@@ -38,11 +38,19 @@
                         type: "POST",
                         url: "http://localhost:8081/predict/",
                         data: {images: img},
-                        success: function(data) {
-                            console.log(data)
-                        }
+                        success:function(data_response){
+                            window.location = 'http://127.0.0.1:8081/recommend/' + data_response;
+                                        }
+
                     })
                 });
+               
+            //    $(document).on("click","#recommend", function(event){
+            //    event.preventDefault();
+                
+            //    }
+
     </script>
+ 
 
 {% endblock %}
