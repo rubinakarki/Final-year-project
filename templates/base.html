@@ -22,21 +22,24 @@
     <div class="bg_header">
         <nav class="nav">
         <ul>
+
             <a href="{% url 'home'%}"><img src="{% static 'images/1.png'%}" style="float:left;background-color:black;height:69px; width:65px;"></a>
-            
             {% if user.is_authenticated %}
+            <li style="float:left;color:white;font-family: Roboto;font-size: 4vh;"><i class="fa fa-smile-o" style="color: antiquewhite;"> Hi {{ user.username }} !</i></li>
+            {% endif %} 
+            {% if user.is_authenticated %}  
                 <li><a href="{% url 'logout'%}" class="fa fa-sign-out"><b>Logout</b></a></li>
             {% else %}
             <li><a href="{% url 'login'%}" class="fa fa-sign-in"><b>Login</b></a></li>
             <li><a href="{% url 'register' %}" class="fa fa-registered"><b>Register</b></a></li>
-            {% endif %}
+             {% endif %}
             <li><a href="#main" class="fa fa-info-circle"><b> About</b> </a></li>
             <li><a href="{% url 'camera' %}" class="fa fa-camera"><b> Camera</b> </a></li>
             <li><a href="{% url 'chatroom' %}" class="fa fa-comment-o"><b> Chat</b> </a></li>
             <li><a href="{% url 'playlist' %}" class="fa fa-play"><b> Playlist</b></a></li>
             <li><a href="{% url 'home'%}" class="fa fa-home"><b> Home</b> </a></li>
         </ul>
-        </nav>>
+        </nav>
     </div>
     <div>
         <div>
@@ -53,5 +56,8 @@
          {% endblock %}
     </div>
     
+    <script src="{% static 'js/manifest.js' %}"></script>
+    <script src="{% static 'js/vendor.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
 </body>
 </html>

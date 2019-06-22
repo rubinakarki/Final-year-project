@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+        
        <link rel="stylesheet" href="{% static 'css/recommendsong.css'%}">
         <div class="container">
         <div class="jumbotron jumbotron-fluid" id="main">
@@ -12,6 +13,7 @@
                                 <td class="fa fa-music">
                                        <a href="{{ song.link_of_song}}">{{ song.name}} by {{ song.artist }}</a> <br>
                                        Genre : {{ song.genre }}
+                                       
                                 </td>
                                 
 

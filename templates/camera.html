@@ -48,7 +48,7 @@
                
         const input = document.querySelector('input[type ="file"]');
         input.addEventListener('change',function(e){
-            console.log(input.files);
+            e.preventDefault();
             const reader = new FileReader()
             reader.onload = function(){
                 const img = reader.result;
@@ -59,7 +59,6 @@
                         success:function(data_response){
                             window.location = 'http://127.0.0.1:8081/recommend/' + data_response;
                                         }
-
                     })
                 
                 // document.body.appendChild(img)
