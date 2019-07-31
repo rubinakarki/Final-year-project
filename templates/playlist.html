@@ -2,11 +2,13 @@
 {% load static %}
 
 {% block content %}
-        
+
        <link rel="stylesheet" href="{% static 'css/recommendsong.css'%}">
+        
         <div class="container">
+        
         <div class="jumbotron jumbotron-fluid" id="main">
-               
+                <h3 >Total Songs : {{ list.count }}</h3>
                 <table>
                         {% for song in list %}
                         <tr>

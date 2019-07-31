@@ -61,19 +61,19 @@ def predict_from_upload(request):
 
 def recommend(request,emotion):
     if emotion =='angry':
-        songs =  Songs.objects.filter(angry__gt = 0.5).order_by('name')
+        songs =  Songs.objects.filter(angry__gte = 0.5).order_by('name')
     elif emotion =='disgust':
-        songs =  Songs.objects.filter(disgust__gt = 0.5 ).order_by('name')
+        songs =  Songs.objects.filter(disgust__gte = 0.5 ).order_by('name')
     elif emotion =='fear':
-        songs  =  Songs.objects.filter(fear__gt = 0.5).order_by('name')
+        songs  =  Songs.objects.filter(fear__gte = 0.5).order_by('name')
     elif emotion=='happy':
-        songs  =  Songs.objects.filter(happy__gt = 0.5).order_by('name')
+        songs  =  Songs.objects.filter(happy__gte = 0.5).order_by('name')
     elif emotion =='neutral':
-        songs =  Songs.objects.filter(neutral__gt = 0.5).order_by('name')
+        songs =  Songs.objects.filter(neutral__gte  = 0.5).order_by('name')
     elif emotion =='sad':
-        songs =  Songs.objects.filter(sad__gt = 0.5).order_by('name')
+        songs =  Songs.objects.filter(sad__gte = 0.5).order_by('name')
     elif emotion =='surprise':
-        songs  =  Songs.objects.filter(surprise__gt = 0.5).order_by('name')
+        songs  =  Songs.objects.filter(surprise__gte = 0.5).order_by('name')
     # import ipdb; ipdb.set_trace()
     return render(request,'recommendsong.html',{'emotion' : emotion,'songs' : songs})
     

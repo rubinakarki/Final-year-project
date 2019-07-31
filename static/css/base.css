@@ -47,3 +47,10 @@
   li a:hover {
     background-color: #27ad6c;
   }
+  #error{
+    margin-right : 80%;
+ 
+  }
+  .error_container{
+    margin-top: 7%;
+  }

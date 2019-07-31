@@ -1,4 +1,30 @@
-.container{
-    margin-left: 20%;
-    margin-top: 20%;    
+body{
+    margin-left: 5%;
+    margin-right: 5%; 
+    margin-top: 5vh;
 }
+.header { 
+    margin-bottom: 5vh;
+    margin-top: -5vh;
+}
+div.jumbotron.jumbotron-fluid{
+    padding-left:10vh;
+}
+h1{
+    margin-top:0px;
+}
+
+input[name="username"] 
+{
+    background-color: rgb(207, 194, 194);
+   }
+ input[name="password1"] 
+{
+    background-color: rgb(207, 194, 194);
+   }
+ input[name="password2"] 
+{
+    background-color: rgb(207, 194, 194);
+  
+ }
+ 

@@ -9,7 +9,7 @@
       <div class="messages" v-chat-scroll="{always: false,smooth :true}"> 
         <div v-for = "message in messages" :key ="message.id">
           <span class="text-danger">{{message.name}} : </span>
-          <span>{{message.name}}</span>
+          <span>{{message.message}}</span>
           <span class="text-secondary time">{{message.timestamp}}</span>
           
         </div>
@@ -48,7 +48,7 @@ export default {
             { 
               id:doc.id,
               name: doc.data().name,
-              message : doc.data().message,
+              message : doc.data().messages,
               timestamp :moment(doc.data().timestamp).format('LTS')
             }
           );
@@ -61,7 +61,7 @@ export default {
 </script>
 <style>
 .card-body{
-  width: 100%;
+  background-color: #fffdd0;
 }
 .chat h2{
   font-size: 2.6em;

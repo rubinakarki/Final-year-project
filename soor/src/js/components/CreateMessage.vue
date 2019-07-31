@@ -4,6 +4,7 @@
             
             <div class="form-group">
                 <input type="text" name="message" class="form-control" placeholder="Enter a message....." v-model="newMessage"> 
+                
                 <p class="text-danger" v-if="errorText">{{ errorText }}</p>
             </div>
             <button class="btn btn-danger " type ="submit" name="action">Send</button>

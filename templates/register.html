@@ -1,18 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    </head>
+{% load static %}  
+<html>
+<head> 
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+
 <body>
-    <a href="{% url 'register' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-    <form method="POST" class="register">
-        {% csrf_token %}
-        {{form}}
-        <input type="submit">
-    </form>
-    If you already have an account , <a href="{% url 'login'%}"><button>Login</button></a> instead 
+       
+        <div class="jumbotron jumbotron-fluid" > 
+            <div class="header">
+                <a href="{% url 'home' %}"><button class="btn btn-dark" style="width: 25%;padding: 2.5vh;margin-bottom: 5vh;" >Go Back To Home Page</button></a>
+                <h1>Register</h1>
+            </div>
+                
+                <form method="POST" class="register">
+                        {% csrf_token %}
+                        {{form.as_table}}
+                        <input type="submit" value="Register" class="btn btn-info">
+                    </form>
+            If you already have an account , <a href="{% url 'login'%}"><button class="btn btn-info">Login</button> </a> instead 
+    
+        </div>
+      
+     
 </body>
 </html>
+   
+
+

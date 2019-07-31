@@ -135,7 +135,7 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR,'assets')
 
-APPEND_SLASH=False
+APPEND_SLASH = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
